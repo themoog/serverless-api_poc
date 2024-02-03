@@ -1,0 +1,13 @@
+# Terraform ignore rules
+*.tfstate
+*.tfstate.* 
+*.tfvars
+*.tfplan
+*.tfbackup
+.terraform/
+
+# Serverless Framework ignore rules
+.serverless/
+node_modules/
+# Serverless generated deployment artifacts
+*.zip

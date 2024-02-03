@@ -1,0 +1,20 @@
+service: ec2-proxy-service
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-2
+
+functions:
+  proxyToEC2:
+    handler: handler.proxyToEC2
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+          integration: http-proxy
+          request:
+            uri: http://35.178.148.6:5000/{proxy}
+            parameters:
+              paths:
+                proxy: true
