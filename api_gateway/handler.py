@@ -1,11 +1,13 @@
 import json
 import requests
 
+IP = "13.41.241.14"
+
 def proxy_to_ec2(event, context):
     # Extract the proxy path parameter from the event
     path = event['pathParameters']['proxy']
     method = event['httpMethod']
-    base_url = 'http://35.178.148.6:5000/'  # Replace with your EC2 instance's IP and port
+    base_url = f'http://{IP}:5000/'  # Replace with your EC2 instance's IP and port
     
     # Forward the query string parameters, if any
     query_params = event.get('queryStringParameters', {})

@@ -14,7 +14,7 @@ functions:
           method: any
           integration: http-proxy
           request:
-            uri: http://35.178.148.6:5000/{proxy}
+            uri: http://13.41.241.14:5000/{proxy}
             parameters:
               paths:
                 proxy: true
